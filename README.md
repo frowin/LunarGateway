@@ -14,6 +14,10 @@ You can find a demo on Youtube:
 
 [![Video showing an ESP32 connecting to an Acaia Lunar 2021](https://img.youtube.com/vi/KmS2LABmM3s/0.jpg)](https://www.youtube.com/watch?v=KmS2LABmM3s)
 
+## Examples
+
+The library comes with the example "with_display". For this example, a SPI OLED display with the SH1106 chip and the respective library [u8g2](https://github.com/olikraus/u8g2) is needed. Commands can be transferred via serial monitor (set to "new line"). Check the `handleSerial()` function for a list of available commands. More examples, also without display, are planned.
+
 ## Hints for usage
 
 The Acaia Lunar 2021 communicates via BLE (Bluetooth Low Energy). It uses 2 characteristics: one for commands and heartbeats (ESP32 -> Lunar) and one for data payloads (Lunar -> ESP32). The scale expects a "heartbeat" message (at least) every 3000 ms. Otherwise it will close the BLE connection. The scale does not automatically stream the weight to the ESP32: This stream has to be initiated by a notification request `notificationRequest()` which is a method of the lunarGateway class. The weight and battery status are available as attributes. After the initialization of the weight notification with `notificationRequest()`, the scale will send the weight to the ESP32 at 5 Hz. This BLE payload triggers a callback function on the ESP32 and thus enables immediate processing of the data.

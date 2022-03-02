@@ -1,0 +1,30 @@
+#######################################
+# Syntax Coloring Map For LedControl
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+lunarGateway	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init	KEYWORD2
+sendId	KEYWORD2
+sendHeartBeat	KEYWORD2
+doTare	KEYWORD2
+startTimer	KEYWORD2
+notificationRequest KEYWORD2
+stopTimer	KEYWORD2
+resetTimer	KEYWORD2
+getSettings KEYWORD2
+decodeMessage	KEYWORD2
+_prepareRequest KEYWORD2
+_substr	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
+
