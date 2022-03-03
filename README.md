@@ -4,6 +4,8 @@ The LunarGateway is an ESP32-based gateway (as an Arduino library) for the Acaia
 
 With these capabilities, a variety of new applications in the field of speciality coffee arises! With an investment of about $3, you can develop features for your portafilter machine which are - to date - only present in costly catering machines. There is more in the making!
 
+Pull requests and code reviews are highly appreciated! Moreover, feel free to contact me or open an issue.
+
 ## Requirements
 
 The library is built exclusively for the ESP32 platform. Moreover, for now, only [Acaia Lunar 2021](https://eu.acaia.co/products/lunar_2021) scales are implemented. 
