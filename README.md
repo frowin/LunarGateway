@@ -18,11 +18,11 @@ You can find a demo on Youtube:
 
 ## Examples
 
-The library comes with the example "with_display". For this example, a SPI OLED display with the SH1106 chip and the respective library [u8g2](https://github.com/olikraus/u8g2) is needed. Commands can be transferred via serial monitor (set to "new line"). Check the `handleSerial()` function for a list of available commands. More examples, also without display, are planned.
+The library comes with examples. For "with_display", a SPI OLED display with the SH1106 chip and the respective library [u8g2](https://github.com/olikraus/u8g2) is needed. The "basic" example works out of the box with an ESP32. Note, that you need to insert the BLE MAC address of your own Acaia Lunar 2021 scale.
 
 ## Hints for usage
 
-The Acaia Lunar 2021 communicates via BLE (Bluetooth Low Energy). It uses 2 characteristics: one for commands and heartbeats (ESP32 -> Lunar) and one for data payloads (Lunar -> ESP32). The scale expects a "heartbeat" message (at least) every 3000 ms. Otherwise it will close the BLE connection. The scale does not automatically stream the weight to the ESP32: This stream has to be initiated by a notification request `notificationRequest()` which is a method of the lunarGateway class. The weight and battery status are available as attributes. After the initialization of the weight notification with `notificationRequest()`, the scale will send the weight to the ESP32 at 5 Hz. This BLE payload triggers a callback function on the ESP32 and thus enables immediate processing of the data.
+The Acaia Lunar 2021 communicates via BLE (Bluetooth Low Energy). It uses 2 characteristics: one for commands and heartbeats (ESP32 -> Lunar) and one for data payloads (Lunar -> ESP32). The scale expects a "heartbeat" message (at least) every 3000 ms. Otherwise it will close the BLE connection. The scale does not automatically stream the weight to the ESP32: This stream has to be initiated by a notification request `notificationRequest()` which is a method of the lunarGateway class. The weight and battery status are available as attributes. After the initialization of the weight notification with `notificationRequest()`, the scale will send the weight to the ESP32 at 5 Hz. This BLE payload triggers a callback function on the ESP32 and thus enables immediate processing of the data. Be aware that the LunarGateway is tightly bonded to the BLE library for the ESP32. The examples are a good starting point for own projects.
 
 ## Acknowledgement
 
